@@ -6,7 +6,7 @@ const localContent: SiteContent = {
     tagline: config.tagline,
     heading: config.name,
     description: config.description,
-    ctaText: "Get in Touch",
+    ctaText: "Let's Build Something",
   },
 
   about: {
@@ -50,18 +50,21 @@ const localContent: SiteContent = {
       description:
         "A full-featured online store with inventory management, payment processing, and a custom admin dashboard. Built for a local retail business looking to expand online.",
       tags: ["Next.js", "TypeScript", "Stripe", "PostgreSQL"],
+      illustration: "ecommerce",
     },
     {
       title: "Scheduling & Booking System",
       description:
         "An automated appointment scheduling system that reduced no-shows by 40%. Includes SMS reminders, calendar sync, and a client-facing booking portal.",
       tags: ["React", "Node.js", "Twilio", "MongoDB"],
+      illustration: "scheduling",
     },
     {
       title: "Business Dashboard",
       description:
         "A real-time analytics dashboard that consolidates data from multiple sources into a single view. Helped a growing team make faster, data-driven decisions.",
       tags: ["React", "Python", "D3.js", "REST API"],
+      illustration: "dashboard",
     },
   ],
 
@@ -69,7 +72,7 @@ const localContent: SiteContent = {
     heading: "Let\u2019s work together.",
     description:
       "Have a project in mind? I\u2019d love to hear about it. Reach out and let\u2019s talk about how I can help.",
-    ctaText: "Send Me an Email",
+    ctaText: "Start a Conversation",
     email: config.email,
     githubUrl: config.socials.github ?? "",
     linkedinUrl: config.socials.linkedin ?? "",

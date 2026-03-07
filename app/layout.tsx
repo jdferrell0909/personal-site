@@ -23,6 +23,7 @@ export default function RootLayout({
     "--site-primary": config.colors.primary,
     "--site-accent": config.colors.accent,
     "--site-accent-dark": config.colors.accentDark,
+    "--site-accent-warm": config.colors.accentWarm,
     "--site-muted": config.colors.muted,
     "--site-light": config.colors.light,
     "--site-border": config.colors.border,

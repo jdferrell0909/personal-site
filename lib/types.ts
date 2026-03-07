@@ -20,6 +20,7 @@ export interface ProjectItem {
   title: string;
   description: string;
   tags: string[];
+  illustration?: string;
 }
 
 export interface ContactContent {

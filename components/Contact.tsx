@@ -3,15 +3,15 @@ import AnimateOnScroll from "./AnimateOnScroll";
 
 export default function Contact({ content }: { content: ContactContent }) {
   return (
-    <section id="contact" className="px-6 py-24 sm:py-32">
+    <section id="contact" className="bg-primary px-6 py-24 sm:py-32">
       <AnimateOnScroll className="mx-auto max-w-2xl text-center">
         <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">
           Contact
         </p>
-        <h2 className="mb-6 text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+        <h2 className="mb-6 text-3xl font-bold tracking-tight text-white sm:text-4xl">
           {content.heading}
         </h2>
-        <p className="mb-10 text-lg leading-relaxed text-muted">
+        <p className="mb-10 text-lg leading-relaxed text-white/60">
           {content.description}
         </p>
 
@@ -28,7 +28,7 @@ export default function Contact({ content }: { content: ContactContent }) {
               href={content.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted transition-colors hover:text-primary"
+              className="text-white/40 transition-colors hover:text-white"
               aria-label="GitHub"
             >
               <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -42,7 +42,7 @@ export default function Contact({ content }: { content: ContactContent }) {
               href={content.linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted transition-colors hover:text-primary"
+              className="text-white/40 transition-colors hover:text-white"
               aria-label="LinkedIn"
             >
               <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">

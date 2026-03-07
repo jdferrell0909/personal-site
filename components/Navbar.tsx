@@ -24,7 +24,9 @@ export default function Navbar() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <a
           href="#"
-          className="text-lg font-semibold tracking-tight text-primary"
+          className={`text-lg font-semibold tracking-tight transition-colors ${
+            scrolled ? "text-primary" : "text-white"
+          }`}
         >
           {config.name}
         </a>
@@ -35,7 +37,11 @@ export default function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-sm font-medium text-muted transition-colors hover:text-primary"
+                className={`text-sm font-medium transition-colors ${
+                  scrolled
+                    ? "text-muted hover:text-primary"
+                    : "text-white/70 hover:text-white"
+                }`}
               >
                 {link.label}
               </a>
@@ -50,19 +56,19 @@ export default function Navbar() {
           aria-label="Toggle menu"
         >
           <span
-            className={`block h-0.5 w-6 bg-primary transition-all duration-300 ${
-              mobileOpen ? "translate-y-2 rotate-45" : ""
-            }`}
+            className={`block h-0.5 w-6 transition-all duration-300 ${
+              scrolled ? "bg-primary" : "bg-white"
+            } ${mobileOpen ? "translate-y-2 rotate-45" : ""}`}
           />
           <span
-            className={`block h-0.5 w-6 bg-primary transition-all duration-300 ${
-              mobileOpen ? "opacity-0" : ""
-            }`}
+            className={`block h-0.5 w-6 transition-all duration-300 ${
+              scrolled ? "bg-primary" : "bg-white"
+            } ${mobileOpen ? "opacity-0" : ""}`}
           />
           <span
-            className={`block h-0.5 w-6 bg-primary transition-all duration-300 ${
-              mobileOpen ? "-translate-y-2 -rotate-45" : ""
-            }`}
+            className={`block h-0.5 w-6 transition-all duration-300 ${
+              scrolled ? "bg-primary" : "bg-white"
+            } ${mobileOpen ? "-translate-y-2 -rotate-45" : ""}`}
           />
         </button>
       </div>

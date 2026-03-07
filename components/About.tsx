@@ -6,10 +6,12 @@ export default function About({ content }: { content: AboutContent }) {
     <section id="about" className="bg-light px-6 py-24 sm:py-32">
       <AnimateOnScroll className="mx-auto max-w-6xl">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-          {/* Photo placeholder */}
+          {/* Initials avatar */}
           <div className="flex justify-center lg:order-2">
-            <div className="flex h-80 w-80 items-center justify-center rounded-2xl bg-border text-sm text-muted sm:h-96 sm:w-96">
-              Photo
+            <div className="flex h-80 w-80 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-accent ring-4 ring-accent/20 ring-offset-4 ring-offset-light sm:h-96 sm:w-96">
+              <span className="text-7xl font-bold tracking-tight text-white sm:text-8xl">
+                JF
+              </span>
             </div>
           </div>
 

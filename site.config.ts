@@ -21,6 +21,7 @@ export interface SiteConfig {
     primary: string;
     accent: string;
     accentDark: string;
+    accentWarm: string;
     muted: string;
     light: string;
     border: string;
@@ -60,6 +61,7 @@ const config: SiteConfig = {
     primary: "#0f172a",
     accent: "#2563eb",
     accentDark: "#1d4ed8",
+    accentWarm: "#f59e0b",
     muted: "#64748b",
     light: "#f8fafc",
     border: "#e2e8f0",

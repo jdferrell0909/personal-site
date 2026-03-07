@@ -25,6 +25,13 @@ const icons: Record<string, React.ReactNode> = {
   ),
 };
 
+const iconBgColors: Record<string, { base: string; hover: string }> = {
+  code: { base: "bg-accent/10 text-accent", hover: "group-hover:bg-accent group-hover:text-white" },
+  automation: { base: "bg-accent-warm/10 text-accent-warm", hover: "group-hover:bg-accent-warm group-hover:text-white" },
+  consulting: { base: "bg-accent/10 text-accent", hover: "group-hover:bg-accent group-hover:text-white" },
+  design: { base: "bg-accent-warm/10 text-accent-warm", hover: "group-hover:bg-accent-warm group-hover:text-white" },
+};
+
 export default function Services({ items }: { items: ServiceItem[] }) {
   return (
     <section id="services" className="px-6 py-24 sm:py-32">
@@ -39,22 +46,25 @@ export default function Services({ items }: { items: ServiceItem[] }) {
         </div>
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {items.map((service, i) => (
-            <div
-              key={service.title}
-              className={`stagger-${i + 1} group rounded-2xl border border-border bg-white p-8 transition-all hover:border-accent/20 hover:shadow-lg`}
-            >
-              <div className="mb-5 inline-flex rounded-xl bg-accent/10 p-3 text-accent transition-colors group-hover:bg-accent group-hover:text-white">
-                {icons[service.icon] ?? icons.code}
+          {items.map((service, i) => {
+            const colors = iconBgColors[service.icon] ?? iconBgColors.code;
+            return (
+              <div
+                key={service.title}
+                className={`stagger-${i + 1} group rounded-2xl border border-border bg-white p-8 transition-all hover:-translate-y-1 hover:border-accent/20 hover:shadow-lg`}
+              >
+                <div className={`mb-5 inline-flex rounded-xl p-3 transition-colors ${colors.base} ${colors.hover}`}>
+                  {icons[service.icon] ?? icons.code}
+                </div>
+                <h3 className="mb-3 text-lg font-semibold text-primary">
+                  {service.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-muted">
+                  {service.description}
+                </p>
               </div>
-              <h3 className="mb-3 text-lg font-semibold text-primary">
-                {service.title}
-              </h3>
-              <p className="text-sm leading-relaxed text-muted">
-                {service.description}
-              </p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </AnimateOnScroll>
     </section>

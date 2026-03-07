@@ -2,15 +2,21 @@ import type { HeroContent } from "@/lib/types";
 
 export default function Hero({ content }: { content: HeroContent }) {
   return (
-    <section className="flex min-h-screen items-center justify-center px-6">
-      <div className="mx-auto max-w-3xl text-center">
+    <section className="relative flex min-h-screen items-center justify-center bg-primary px-6 overflow-hidden">
+      {/* Radial gradient glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(37,99,235,0.15)_0%,_transparent_70%)]" />
+
+      {/* Dot pattern overlay */}
+      <div className="dot-pattern absolute inset-0" />
+
+      <div className="relative mx-auto max-w-3xl text-center">
         <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-accent">
           {content.tagline}
         </p>
-        <h1 className="mb-6 text-5xl font-bold leading-tight tracking-tight text-primary sm:text-6xl lg:text-7xl">
+        <h1 className="mb-6 text-5xl font-bold leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl">
           {content.heading}
         </h1>
-        <p className="mx-auto mb-10 max-w-xl text-lg leading-relaxed text-muted sm:text-xl">
+        <p className="mx-auto mb-10 max-w-xl text-lg leading-relaxed text-white/60 sm:text-xl">
           {content.description}
         </p>
         <a

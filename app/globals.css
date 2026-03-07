@@ -11,6 +11,7 @@
   --color-primary: var(--site-primary, #0f172a);
   --color-accent: var(--site-accent, #2563eb);
   --color-accent-dark: var(--site-accent-dark, #1d4ed8);
+  --color-accent-warm: var(--site-accent-warm, #f59e0b);
   --color-muted: var(--site-muted, #64748b);
   --color-light: var(--site-light, #f8fafc);
   --color-border: var(--site-border, #e2e8f0);
@@ -60,4 +61,10 @@ body {
 .animate-on-scroll.is-visible .stagger-4 {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Dot pattern overlay for hero */
+.dot-pattern {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
