@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import config from "@/site.config";
 import "./globals.css";
 
 const inter = Inter({
@@ -9,9 +10,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "James Ferrell — Software Consultant",
-  description:
-    "Custom web applications, business automation, and technical consulting. Helping businesses build better software.",
+  title: `${config.name} — ${config.tagline}`,
+  description: config.description,
 };
 
 export default function RootLayout({
@@ -19,8 +19,19 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cssVars = {
+    "--site-primary": config.colors.primary,
+    "--site-accent": config.colors.accent,
+    "--site-accent-dark": config.colors.accentDark,
+    "--site-muted": config.colors.muted,
+    "--site-light": config.colors.light,
+    "--site-border": config.colors.border,
+    "--site-background": config.colors.background,
+    "--site-foreground": config.colors.foreground,
+  } as React.CSSProperties;
+
   return (
-    <html lang="en">
+    <html lang="en" style={cssVars}>
       <body className={`${inter.variable} antialiased`}>{children}</body>
     </html>
   );

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getBlogPost, getBlogPosts } from "@/lib/blog";
 import NotionRenderer from "@/components/NotionRenderer";
+import config from "@/site.config";
 
 export const revalidate = 60;
 
@@ -20,7 +21,7 @@ export async function generateMetadata({
   const post = await getBlogPost(slug);
   if (!post) return { title: "Post Not Found" };
   return {
-    title: `${post.title} — James Ferrell`,
+    title: `${post.title} — ${config.name}`,
     description: post.excerpt,
   };
 }
@@ -43,7 +44,7 @@ export default async function BlogPostPage({
             href="/"
             className="text-lg font-semibold tracking-tight text-primary"
           >
-            James Ferrell
+            {config.name}
           </Link>
           <Link
             href="/blog"

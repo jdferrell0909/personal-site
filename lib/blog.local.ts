@@ -129,14 +129,18 @@ const posts: LocalPost[] = [
 ];
 
 export function getLocalBlogPosts(): BlogPost[] {
-  return posts.map((p) => ({
-    id: slugify(p.title),
-    slug: slugify(p.title),
-    title: p.title,
-    excerpt: p.excerpt,
-    tags: p.tags,
-    date: p.date,
-  }));
+  return posts
+    .map((p) => ({
+      id: slugify(p.title),
+      slug: slugify(p.title),
+      title: p.title,
+      excerpt: p.excerpt,
+      tags: p.tags,
+      date: p.date,
+    }))
+    .sort(
+      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    );
 }
 
 export function getLocalBlogPost(slug: string): BlogPostFull | null {

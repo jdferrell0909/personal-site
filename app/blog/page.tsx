@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getBlogPosts } from "@/lib/blog";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import config from "@/site.config";
 
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Blog — James Ferrell",
-  description:
-    "Thoughts on software, web development, and building better tools for businesses.",
+  title: `${config.blog.title} — ${config.name}`,
+  description: config.blog.description,
 };
 
 export default async function BlogPage() {
@@ -23,7 +23,7 @@ export default async function BlogPage() {
             href="/"
             className="text-lg font-semibold tracking-tight text-primary"
           >
-            James Ferrell
+            {config.name}
           </Link>
           <Link
             href="/"
@@ -37,14 +37,13 @@ export default async function BlogPage() {
       <main className="mx-auto max-w-3xl px-6 py-16 sm:py-24">
         <AnimateOnScroll>
           <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">
-            Blog
+            {config.blog.title}
           </p>
           <h1 className="mb-4 text-4xl font-bold tracking-tight text-primary sm:text-5xl">
-            Writing
+            {config.blog.heading}
           </h1>
           <p className="mb-12 text-lg text-muted">
-            Thoughts on software, building for businesses, and using AI as a
-            tool &mdash; not a crutch.
+            {config.blog.description}
           </p>
         </AnimateOnScroll>
 

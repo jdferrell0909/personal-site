@@ -1,14 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
-const links = [
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Projects", href: "#projects" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "#contact" },
-];
+import config from "@/site.config";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -33,12 +26,12 @@ export default function Navbar() {
           href="#"
           className="text-lg font-semibold tracking-tight text-primary"
         >
-          James Ferrell
+          {config.name}
         </a>
 
         {/* Desktop links */}
         <ul className="hidden items-center gap-8 md:flex">
-          {links.map((link) => (
+          {config.navLinks.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
@@ -81,7 +74,7 @@ export default function Navbar() {
         }`}
       >
         <ul className="flex flex-col gap-4 bg-white px-6 pb-6">
-          {links.map((link) => (
+          {config.navLinks.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}

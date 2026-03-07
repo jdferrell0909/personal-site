@@ -1,11 +1,11 @@
 import type { SiteContent } from "./types";
+import config from "@/site.config";
 
 const localContent: SiteContent = {
   hero: {
-    tagline: "Software Consultant",
-    heading: "James Ferrell",
-    description:
-      "I help businesses build custom software that works. From web applications to automation \u2014 let\u2019s turn your ideas into reality.",
+    tagline: config.tagline,
+    heading: config.name,
+    description: config.description,
     ctaText: "Get in Touch",
   },
 
@@ -70,9 +70,9 @@ const localContent: SiteContent = {
     description:
       "Have a project in mind? I\u2019d love to hear about it. Reach out and let\u2019s talk about how I can help.",
     ctaText: "Send Me an Email",
-    email: "hello@jamesferrell.dev",
-    githubUrl: "https://github.com/jamesferrell",
-    linkedinUrl: "https://linkedin.com/in/jamesferrell",
+    email: config.email,
+    githubUrl: config.socials.github ?? "",
+    linkedinUrl: config.socials.linkedin ?? "",
   },
 };
 
