@@ -70,6 +70,7 @@ export async function fetchNotionContent(): Promise<SiteContent> {
   const projectRows = bySection("projects");
   const projects: ProjectItem[] = projectRows.map((r) => ({
     title: r.heading || r.name,
+    slug: (r.heading || r.name).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, ""),
     description: r.body,
     tags: r.tags,
   }));

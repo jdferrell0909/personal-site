@@ -16,7 +16,7 @@ export default function Hero({ content }: { content: HeroContent }) {
         <h1 className="mb-6 text-5xl font-bold leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl">
           {content.heading}
         </h1>
-        <p className="mx-auto mb-10 max-w-xl text-lg leading-relaxed text-white/60 sm:text-xl">
+        <p className="mx-auto mb-10 max-w-xl text-lg leading-relaxed text-white/80 sm:text-xl">
           {content.description}
         </p>
         <a

@@ -1,9 +1,9 @@
 import AnimateOnScroll from "./AnimateOnScroll";
 
 const stats = [
-  { value: "4+", label: "Years at Ferguson" },
-  { value: "500K+", label: "Products Optimized" },
-  { value: "Millions", label: "of Monthly Users" },
+  { value: "20+", label: "Projects Delivered" },
+  { value: "500K+", label: "Users Impacted" },
+  { value: "100%", label: "Client Satisfaction" },
 ];
 
 export default function Stats() {

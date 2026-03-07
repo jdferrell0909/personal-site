@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { ProjectItem } from "@/lib/types";
 import AnimateOnScroll from "./AnimateOnScroll";
 
@@ -133,9 +134,10 @@ export default function Projects({ items }: { items: ProjectItem[] }) {
               : null;
 
             return (
-              <div
+              <Link
+                href={`/projects/${project.slug}`}
                 key={project.title}
-                className={`stagger-${i + 1} group overflow-hidden rounded-2xl border border-border bg-white transition-all hover:-translate-y-1 hover:border-accent/30 hover:shadow-lg`}
+                className={`stagger-${i + 1} group block overflow-hidden rounded-2xl border border-border bg-white transition-all hover:-translate-y-1 hover:border-accent/30 hover:shadow-lg`}
               >
                 {/* Illustration area */}
                 <div className="h-48 overflow-hidden transition-transform duration-300 group-hover:scale-[1.02]">
@@ -166,7 +168,7 @@ export default function Projects({ items }: { items: ProjectItem[] }) {
                     ))}
                   </div>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>

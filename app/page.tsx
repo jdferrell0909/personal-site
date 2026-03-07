@@ -4,6 +4,7 @@ import Stats from "@/components/Stats";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import Projects from "@/components/Projects";
+import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { getContent } from "@/lib/content";
@@ -23,6 +24,7 @@ export default async function Home() {
         <About content={content.about} />
         <Services items={content.services} />
         <Projects items={content.projects} />
+        <Testimonials />
         <Contact content={content.contact} />
       </main>
       <Footer />

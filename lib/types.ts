@@ -18,7 +18,9 @@ export interface ServiceItem {
 
 export interface ProjectItem {
   title: string;
+  slug: string;
   description: string;
+  fullDescription?: string;
   tags: string[];
   illustration?: string;
 }

@@ -48,11 +48,19 @@ export default function Services({ items }: { items: ServiceItem[] }) {
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((service, i) => {
             const colors = iconBgColors[service.icon] ?? iconBgColors.code;
+            const isFirst = i === 0;
             return (
               <div
                 key={service.title}
-                className={`stagger-${i + 1} group rounded-2xl border border-border bg-white p-8 transition-all hover:-translate-y-1 hover:border-accent/20 hover:shadow-lg`}
+                className={`stagger-${i + 1} group relative rounded-2xl border ${
+                  isFirst ? "border-accent/30" : "border-border"
+                } bg-white p-8 transition-all hover:-translate-y-1 hover:border-accent/20 hover:shadow-lg`}
               >
+                {isFirst && (
+                  <span className="absolute -top-3 right-4 rounded-full bg-accent px-3 py-1 text-xs font-semibold text-white shadow-md">
+                    Most Popular
+                  </span>
+                )}
                 <div className={`mb-5 inline-flex rounded-xl p-3 transition-colors ${colors.base} ${colors.hover}`}>
                   {icons[service.icon] ?? icons.code}
                 </div>
@@ -62,6 +70,15 @@ export default function Services({ items }: { items: ServiceItem[] }) {
                 <p className="text-sm leading-relaxed text-muted">
                   {service.description}
                 </p>
+                <a
+                  href="#contact"
+                  className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent transition-colors hover:text-accent-dark"
+                >
+                  Get started
+                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </a>
               </div>
             );
           })}
