@@ -18,11 +18,10 @@ export interface ServiceItem {
 
 export interface ProjectItem {
   title: string;
-  slug: string;
   description: string;
-  fullDescription?: string;
   tags: string[];
   image?: string;
+  link?: string;
 }
 
 export interface ContactContent {
