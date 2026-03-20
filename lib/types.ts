@@ -22,7 +22,7 @@ export interface ProjectItem {
   description: string;
   fullDescription?: string;
   tags: string[];
-  illustration?: string;
+  image?: string;
 }
 
 export interface ContactContent {

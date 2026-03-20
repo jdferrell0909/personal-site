@@ -19,6 +19,7 @@ interface Row {
   order: number;
   link: string;
   icon: string;
+  image: string;
 }
 
 export async function fetchNotionContent(): Promise<SiteContent> {
@@ -36,6 +37,7 @@ export async function fetchNotionContent(): Promise<SiteContent> {
       order: num(props["Order"]),
       link: url(props["Link"]),
       icon: select(props["Icon"]).toLowerCase(),
+      image: url(props["Image"]),
     };
   });
 
@@ -73,6 +75,7 @@ export async function fetchNotionContent(): Promise<SiteContent> {
     slug: (r.heading || r.name).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, ""),
     description: r.body,
     tags: r.tags,
+    image: r.image || undefined,
   }));
 
   // Contact
