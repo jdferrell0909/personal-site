@@ -38,8 +38,8 @@ const config: SiteConfig = {
 
   email: "hello@jamesferrell.dev",
   socials: {
-    github: "https://github.com/jamesferrell",
-    linkedin: "https://linkedin.com/in/jamesferrell",
+    github: "https://github.com/jdferrell0909",
+    linkedin: "https://linkedin.com/in/james-d-ferrell",
   },
 
   navLinks: [

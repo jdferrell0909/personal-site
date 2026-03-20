@@ -1,6 +1,7 @@
 import config from "@/site.config";
+import type { ContactContent } from "@/lib/types";
 
-export default function Footer() {
+export default function Footer({ contact }: { contact?: ContactContent }) {
   return (
     <footer className="bg-primary border-t border-white/10 px-6 py-12">
       <div className="mx-auto max-w-6xl">
@@ -33,9 +34,9 @@ export default function Footer() {
 
           {/* Social links */}
           <div className="flex items-center gap-4">
-            {config.socials.github && (
+            {(contact?.githubUrl || config.socials.github) && (
               <a
-                href={config.socials.github}
+                href={contact?.githubUrl || config.socials.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/40 transition-colors hover:text-white/70"
@@ -46,9 +47,9 @@ export default function Footer() {
                 </svg>
               </a>
             )}
-            {config.socials.linkedin && (
+            {(contact?.linkedinUrl || config.socials.linkedin) && (
               <a
-                href={config.socials.linkedin}
+                href={contact?.linkedinUrl || config.socials.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/40 transition-colors hover:text-white/70"

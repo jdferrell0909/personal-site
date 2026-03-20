@@ -23,7 +23,7 @@ export default async function Home() {
         <Projects items={content.projects} />
         <Contact content={content.contact} />
       </main>
-      <Footer />
+      <Footer contact={content.contact} />
     </>
   );
 }
