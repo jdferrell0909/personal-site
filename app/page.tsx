@@ -1,6 +1,5 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Stats from "@/components/Stats";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import Projects from "@/components/Projects";
@@ -19,7 +18,6 @@ export default async function Home() {
       <Navbar />
       <main>
         <Hero content={content.hero} />
-        <Stats />
         <About content={content.about} />
         <Services items={content.services} />
         <Projects items={content.projects} />
