@@ -23,14 +23,14 @@ export default function Projects({ items }: { items: ProjectItem[] }) {
               key={project.title}
               className={`stagger-${i + 1} group block overflow-hidden rounded-2xl border border-border bg-white transition-all hover:-translate-y-1 hover:border-accent/30 hover:shadow-lg`}
             >
-              <div className="h-48 overflow-hidden transition-transform duration-300 group-hover:scale-[1.02]">
+              <div className="h-48 overflow-hidden bg-white transition-transform duration-300 group-hover:scale-[1.02]">
                 {project.image ? (
                   <Image
                     src={project.image}
                     alt={project.title}
                     width={400}
                     height={192}
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-contain p-6"
                   />
                 ) : (
                   <div className="flex h-full items-center justify-center bg-gradient-to-br from-accent/5 to-accent/10 text-sm text-muted">
